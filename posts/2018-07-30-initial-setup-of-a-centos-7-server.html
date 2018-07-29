@@ -108,25 +108,28 @@
 
 
 
-  <meta name="description" content="迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。 跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。 本文主要进行的是 sshd 安全配置，包括限制 root 及设置普通用户，其主要目的也是为">
+  <meta name="description" content="服务器迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。 跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。 本文主要进行的是 sshd 安全配置，包括限制 root 及设置普通用户，其主要目的">
 <meta name="keywords" content="CentOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于 CentOS 7 系统设置与优化">
 <meta property="og:url" content="https://newbietech.xyz/posts/2018-07-30-initial-setup-of-a-centos-7-server.html">
 <meta property="og:site_name" content="newbietech">
-<meta property="og:description" content="迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。 跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。 本文主要进行的是 sshd 安全配置，包括限制 root 及设置普通用户，其主要目的也是为">
+<meta property="og:description" content="服务器迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。 跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。 本文主要进行的是 sshd 安全配置，包括限制 root 及设置普通用户，其主要目的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215251832.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215401005.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215439566.png-newbietech.optimized">
 <meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215612632.png-newbietech.optimized">
 <meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215827627.png-newbietech.optimized">
 <meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215939410.png-newbietech.optimized">
 <meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/220016202.png-newbietech.optimized">
 <meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/220056569.png-newbietech.optimized">
 <meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/220144018.png-newbietech.optimized">
-<meta property="og:updated_time" content="2018-07-29T16:42:52.682Z">
+<meta property="og:updated_time" content="2018-07-29T18:19:40.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 CentOS 7 系统设置与优化">
-<meta name="twitter:description" content="迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。 跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。 本文主要进行的是 sshd 安全配置，包括限制 root 及设置普通用户，其主要目的也是为">
-<meta name="twitter:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215612632.png-newbietech.optimized">
+<meta name="twitter:description" content="服务器迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。 跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。 本文主要进行的是 sshd 安全配置，包括限制 root 及设置普通用户，其主要目的">
+<meta name="twitter:image" content="https://cdn.huangzenghao.cn/newbietech/20170912/215251832.png-newbietech.optimized">
 
 
 
@@ -422,38 +425,63 @@
       
 
       
-        <p>迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。</p>
+        <p>服务器迁移到 Vultr 东京机房，这次我们选择了 CentOS 7 x64 作为 VPS 的操作系统，因为我们认为它相比之前使用的 Ubuntu 16.04 x64 LTS 更适合我们。</p>
 <p>跟其他系统（无论是服务器还是桌面操作系统）一样，在系统安装后，尤其是投入生产用途时，需要进行一系列的设置，主要是增加安全性。</p>
 <p>本文主要进行的是 <strong>sshd 安全配置</strong>，包括限制 root 及设置普通用户，其主要目的也是为了增加 sshd 的安全性。</p>
-<h3 id="修改-root-密码"><a href="#修改-root-密码" class="headerlink" title="修改 root 密码"></a>修改 root 密码</h3><p>默认生成的 root 密码太过复杂，而且是明文显示在“Server Information”中的，我们需要更改一个容易记住且安全性高的密码，使用 root 登录并运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改-root-密码"><a href="#修改-root-密码" class="headerlink" title="修改 root 密码"></a>修改 root 密码</h3><p>默认生成的 root 密码太过复杂，而且是明文显示在“Server Information”中的，我们需要更改一个容易记住且安全性高的密码，使用 root 登录并运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
 <p>即可按提示设置 root 密码。</p>
 <h3 id="创建普通用户"><a href="#创建普通用户" class="headerlink" title="创建普通用户"></a>创建普通用户</h3><p>root 权限过大，且 root 容易被作为攻击的突破口，故，我们需要再创建一个普通用户，用于替代 root 进行系统的日常管理操作。</p>
-<p>我们使用以下命令创建新用户（用户名为“newbietech”，以下简称为“newbietech”）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser newbietech</span><br></pre></td></tr></table></figure></p>
-<p>使用以下命令，按提示为 newbietech 设置密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd newbietech</span><br></pre></td></tr></table></figure></p>
-<p>同时，我们使用以下命令，将 newbietech 加入“Wheel”组：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpasswd -a newbietech wheel</span><br></pre></td></tr></table></figure></p>
-<p>当看到“<figure class="highlight plain"><figcaption><span>user newbietech to group wheel```”时，表明 newbietech 已经添加至 Wheel 组，具备 sudo 权限，可以在必要时提权（需输入 newbietech 的密码确认），替代 root 进行某些操作。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### sshd 安全配置</span><br><span class="line"></span><br><span class="line">我们使用 SSH 登录的方式对 VPS 进行管理，这样 sshd 的安全配置便是确保系统安全的重要部分。</span><br><span class="line"></span><br><span class="line">对 sshd 的安全配置，主要通过修改“/etc/ssh/sshd_config”文件实现。</span><br><span class="line"></span><br><span class="line">我们可以通过以下命令对该文件进行修改：</span><br><span class="line">```bash</span><br><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
-<p>而使用以下命令重启 sshd 服务使修改生效：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd restart</span><br></pre></td></tr></table></figure></p>
+<p>我们使用以下命令创建新用户（用户名为“newbietech”，以下简称为“newbietech”）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser newbietech</span><br></pre></td></tr></table></figure>
+<p>使用以下命令，按提示为 newbietech 设置密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd newbietech</span><br></pre></td></tr></table></figure>
+<p>同时，我们使用以下命令，将 newbietech 加入“Wheel”组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpasswd -a newbietech wheel</span><br></pre></td></tr></table></figure>
+<p>当看到“Adding user newbietech to group wheel”时，表明 newbietech 已经添加至 Wheel 组，具备 sudo 权限，可以在必要时提权（需输入 newbietech 的密码确认），替代 root 进行某些操作。</p>
+<h3 id="sshd-安全配置"><a href="#sshd-安全配置" class="headerlink" title="sshd 安全配置"></a>sshd 安全配置</h3><p>我们使用 SSH 登录的方式对 VPS 进行管理，这样 sshd 的安全配置便是确保系统安全的重要部分。</p>
+<p>对 sshd 的安全配置，主要通过修改“/etc/ssh/sshd_config”文件实现。</p>
+<p>我们可以通过以下命令对该文件进行修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>而使用以下命令重启 sshd 服务使修改生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
 <p>对 sshd 的安全配置，也包括对其他配置文件的修改，我们强烈建议：</p>
 <ul>
 <li>在修改前注意保存配置文件；</li>
 <li>对多项功能进行修改时，逐项进行测试，通过一项后再进行下一项的修改。</li>
 </ul>
 <h4 id="修改-sshd-端口"><a href="#修改-sshd-端口" class="headerlink" title="修改 sshd 端口"></a>修改 sshd 端口</h4><p>sshd 的默认端口为“22”，我们将它改为其他端口，例如“10086”。</p>
-<p>我们在“/etc/ssh/sshd_config”文件中添加“<figure class="highlight plain"><figcaption><span>10086```”，如下图：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![sshd - Port](https://cdn.huangzenghao.cn/newbietech/20170912/215251832.png-newbietech.optimized)</span><br><span class="line">保存退出，运行以下命令将“10086”端口添加至防火墙的开放规则中：</span><br><span class="line">```bash</span><br><span class="line">firewall-cmd --add-port 10086/tcp</span><br></pre></td></tr></table></figure></p>
+<p>我们在“/etc/ssh/sshd_config”文件中添加“Port 10086”，如下图：</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20170912/215251832.png-newbietech.optimized" alt="sshd - Port"></p>
+<p>保存退出，运行以下命令将“10086”端口添加至防火墙的开放规则中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port 10086/tcp</span><br></pre></td></tr></table></figure>
 <p>再重启 sshd 服务使修改生效，即可使用新端口进行登录。</p>
-<p>经测试使用新端口进行登录无异常之后，运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port 10086/tcp --permanent</span><br></pre></td></tr></table></figure></p>
+<p>经测试使用新端口进行登录无异常之后，运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port 10086/tcp --permanent</span><br></pre></td></tr></table></figure>
 <p>使防火墙规则在重启系统之后依然生效。</p>
 <h4 id="使用-SSH-v2-协议"><a href="#使用-SSH-v2-协议" class="headerlink" title="使用 SSH v2 协议"></a>使用 SSH v2 协议</h4><p>SSH v1 协议已被证实存在缺陷，我们应使用安全性更高的 SSH v2 协议以提高安全性。</p>
-<p>我们在“/etc/ssh/sshd_config”文件中添加“<figure class="highlight plain"><figcaption><span>2```”，修改生效后，即可启用 SSH v2 协议的支持。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![sshd - Protocol](https://cdn.huangzenghao.cn/newbietech/20170912/215401005.png-newbietech.optimized)</span><br><span class="line"></span><br><span class="line">#### 限制 root 直接登录</span><br><span class="line"></span><br><span class="line">我们在“/etc/ssh/sshd_config”文件中添加“```PermitRootLogin no```”，修改生效后，即可限制 root 直接登录。</span><br><span class="line"></span><br><span class="line">![sshd - PermitRootLogin](https://cdn.huangzenghao.cn/newbietech/20170912/215439566.png-newbietech.optimized)</span><br><span class="line"></span><br><span class="line">值得注意的是，配置生效后，我们不要急于退出当前 SSH 连接，新开一个终端，测试 root 是否已被禁止登录，而使用普通用户登录是否成功。一切经测试正常后，才能将当前 SSH 连接退出。</span><br><span class="line"></span><br><span class="line">在进行配置文件的修改之前，对拟修改的文件先进行备份是个好习惯，因为这样可以在出现问题时及时回退到可用的版本。</span><br><span class="line"></span><br><span class="line">#### 使用密钥进行登录</span><br><span class="line"></span><br><span class="line">先前在使用 Amazon ECS 的时候，我们就注意到，其官方的镜像将禁止 root 直接登录并使用密钥进行登录作为增强系统安全性的措施。</span><br><span class="line"></span><br><span class="line">使用密钥登录，我们需要先创建密钥。</span><br><span class="line"></span><br><span class="line">在 Linux 下，我们可以使用以下命令创建密钥：</span><br><span class="line">```bash</span><br><span class="line">ssh-keygen -t rsa -b 4096</span><br></pre></td></tr></table></figure></p>
+<p>我们在“/etc/ssh/sshd_config”文件中添加“Protocol 2”，修改生效后，即可启用 SSH v2 协议的支持。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20170912/215401005.png-newbietech.optimized" alt="sshd - Protocol"></p>
+<h4 id="限制-root-直接登录"><a href="#限制-root-直接登录" class="headerlink" title="限制 root 直接登录"></a>限制 root 直接登录</h4><p>我们在“/etc/ssh/sshd_config”文件中添加“PermitRootLogin no”，修改生效后，即可限制 root 直接登录。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20170912/215439566.png-newbietech.optimized" alt="sshd - PermitRootLogin"></p>
+<p>值得注意的是，配置生效后，我们不要急于退出当前 SSH 连接，新开一个终端，测试 root 是否已被禁止登录，而使用普通用户登录是否成功。一切经测试正常后，才能将当前 SSH 连接退出。</p>
+<p>在进行配置文件的修改之前，对拟修改的文件先进行备份是个好习惯，因为这样可以在出现问题时及时回退到可用的版本。</p>
+<h4 id="使用密钥进行登录"><a href="#使用密钥进行登录" class="headerlink" title="使用密钥进行登录"></a>使用密钥进行登录</h4><p>先前在使用 Amazon ECS 的时候，我们就注意到，其官方的镜像将禁止 root 直接登录并使用密钥进行登录作为增强系统安全性的措施。</p>
+<p>使用密钥登录，我们需要先创建密钥。</p>
+<p>在 Linux 下，我们可以使用以下命令创建密钥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096</span><br></pre></td></tr></table></figure>
 <p>根据提示，即可创建“id_rsa”和“id_rsa.pub”两个文件，前者为私钥，后者为公钥，均保存在“~/.ssh”目录下。</p>
 <p>在 Windows 下，我们也可以使用 PuTTYGen 等工具创建密钥：</p>
 <p><img src="https://cdn.huangzenghao.cn/newbietech/20170912/215612632.png-newbietech.optimized" alt="PuTTY - PuTTY Key Generator"></p>
 <p>我们可以点击“Generate”按钮按提示创建密钥对。</p>
-<p>在 Linux 下生成的密钥，我们可以使用以下方法将公钥添加至“~/.ssh/authorized_keys”文件中并设置文件读写权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
-<p>如果系统中没有其他密钥，我们也可以将“id_rsa.pub”文件复制一份保存为“authorized_keys”，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>在 Linux 下生成的密钥，我们可以使用以下方法将公钥添加至“~/.ssh/authorized_keys”文件中并设置文件读写权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p>如果系统中没有其他密钥，我们也可以将“id_rsa.pub”文件复制一份保存为“authorized_keys”，即：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 <p>我们在创建服务器实例时选择了“SSH Keys”，则 root 的主文件夹下包含密钥文件，但新创建的用户的主文件夹下不包含密钥文件，我们可以将 root 的密钥文件复制到其他用户的主文件夹下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls /home/							<span class="comment"># 应可看到 newbietech 目录</span></span><br><span class="line">ls -ah								<span class="comment"># 应可看到 .ssh 目录</span></span><br><span class="line">ls .ssh/							<span class="comment"># 应可看到 authorized_keys 文件</span></span><br><span class="line">mkdir /home/newbietech/.ssh</span><br><span class="line">cp .ssh/authorized_keys /home/newbietech/.ssh/</span><br><span class="line">chown newbietech /home/newbietech/.ssh/authorized_keys</span><br><span class="line">chmod 600 /home/newbietech/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<p>在 Windows 或其他环境下生成的密钥，我们可以创建“authorized_keys”文件并在编辑器中将公钥粘贴进来：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>在 Windows 或其他环境下生成的密钥，我们可以创建“authorized_keys”文件并在编辑器中将公钥粘贴进来：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 <p>上述过程还可以简单地通过“ssh-copy-id”脚本进行设置：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub <span class="string">"-p 10086 newbietech@newbietech-vultr-tokyo"</span></span><br></pre></td></tr></table></figure>
 <p>总之，只要可以实现<strong>将公钥添加至“~/.ssh/authorized_keys”文件中并设置文件读写权限</strong>的目的即可。</p>
@@ -547,6 +575,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/posts/2018-07-30-set-hostname.html" rel="prev" title="设置 hostname">
+                设置 hostname <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -618,7 +650,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -716,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-root-密码"><span class="nav-number">1.</span> <span class="nav-text">修改 root 密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建普通用户"><span class="nav-number">2.</span> <span class="nav-text">创建普通用户</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-sshd-端口"><span class="nav-number">2.1.</span> <span class="nav-text">修改 sshd 端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-SSH-v2-协议"><span class="nav-number">2.2.</span> <span class="nav-text">使用 SSH v2 协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用密码登录"><span class="nav-number">2.3.</span> <span class="nav-text">禁用密码登录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-fail2ban"><span class="nav-number">3.</span> <span class="nav-text">安装 fail2ban</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-root-密码"><span class="nav-number">1.</span> <span class="nav-text">修改 root 密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建普通用户"><span class="nav-number">2.</span> <span class="nav-text">创建普通用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sshd-安全配置"><span class="nav-number">3.</span> <span class="nav-text">sshd 安全配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-sshd-端口"><span class="nav-number">3.1.</span> <span class="nav-text">修改 sshd 端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-SSH-v2-协议"><span class="nav-number">3.2.</span> <span class="nav-text">使用 SSH v2 协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#限制-root-直接登录"><span class="nav-number">3.3.</span> <span class="nav-text">限制 root 直接登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用密钥进行登录"><span class="nav-number">3.4.</span> <span class="nav-text">使用密钥进行登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用密码登录"><span class="nav-number">3.5.</span> <span class="nav-text">禁用密码登录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-fail2ban"><span class="nav-number">4.</span> <span class="nav-text">安装 fail2ban</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>

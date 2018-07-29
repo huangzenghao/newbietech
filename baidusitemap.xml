@@ -4,8 +4,31 @@
 
     
   <url>
+    <loc>https://newbietech.xyz//posts/2018-07-30-set-hostname.html</loc>
+    <lastmod>2018-07-29T18:21:40.280Z</lastmod>
+    <data>
+        <display>
+        <title>设置 hostname</title>
+        <pubTime>2018-07-29T18:12:13.000Z</pubTime>
+        
+        <tag>CentOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://newbietech.xyz//posts/2018-07-30-initial-setup-of-a-centos-7-server.html</loc>
-    <lastmod>2018-07-29T16:42:52.682Z</lastmod>
+    <lastmod>2018-07-29T18:19:40.569Z</lastmod>
     <data>
         <display>
         <title>基于 CentOS 7 系统设置与优化</title>
@@ -27,70 +50,16 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-28-totolink-a3004ns.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
     <lastmod>2018-07-22T06:55:47.599Z</lastmod>
     <data>
         <display>
-        <title>TOTOLINK A3004NS</title>
-        <pubTime>2018-01-27T17:16:44.000Z</pubTime>
+        <title>使用符号链接令 OneDrive 可以同步电脑上的任意文件夹</title>
+        <pubTime>2018-01-11T15:20:11.000Z</pubTime>
         
-        <tag>路由器</tag>
+        <tag>Windows</tag>
          
-        <tag>Padavan</tag>
-         
-        <tag>网络科技</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
-          
-             
-              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://newbietech.xyz//posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    <data>
-        <display>
-        <title>使用 Hexo 在 CODING 和 GitHub 上搭建博客</title>
-        <pubTime>2018-01-10T15:39:49.000Z</pubTime>
-        
-        <tag>Blog</tag>
-         
-        <tag>CODING</tag>
-         
-        <tag>GitHub</tag>
-         
-        <tag>Node.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
-          
-             
-              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://newbietech.xyz//posts/2018-01-14-hexo-deploy-and-backup-script.html</loc>
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 部署与备份脚本</title>
-        <pubTime>2018-01-14T08:57:33.000Z</pubTime>
-        
-        <tag>Hexo</tag>
+        <tag>OneDrive</tag>
          
          
            
@@ -131,16 +100,14 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-14-hexo-deploy-and-backup-script.html</loc>
     <lastmod>2018-07-22T06:55:47.599Z</lastmod>
     <data>
         <display>
-        <title>使用符号链接令 OneDrive 可以同步电脑上的任意文件夹</title>
-        <pubTime>2018-01-11T15:20:11.000Z</pubTime>
+        <title>Hexo 部署与备份脚本</title>
+        <pubTime>2018-01-14T08:57:33.000Z</pubTime>
         
-        <tag>Windows</tag>
-         
-        <tag>OneDrive</tag>
+        <tag>Hexo</tag>
          
          
            
@@ -149,6 +116,32 @@
           
              
               <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-08-hello-world.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>Hello, World!</title>
+        <pubTime>2018-01-07T22:20:11.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>CODING</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
           
         </display>
     </data>
@@ -206,16 +199,47 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-07-21-why-hexo.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
     <lastmod>2018-07-22T06:55:47.599Z</lastmod>
     <data>
         <display>
-        <title>为什么选择 Hexo</title>
-        <pubTime>2018-07-21T15:08:02.000Z</pubTime>
+        <title>使用 Hexo 在 CODING 和 GitHub 上搭建博客</title>
+        <pubTime>2018-01-10T15:39:49.000Z</pubTime>
         
         <tag>Blog</tag>
          
-        <tag>Hexo</tag>
+        <tag>CODING</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>Node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-28-totolink-a3004ns.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>TOTOLINK A3004NS</title>
+        <pubTime>2018-01-27T17:16:44.000Z</pubTime>
+        
+        <tag>路由器</tag>
+         
+        <tag>Padavan</tag>
+         
+        <tag>网络科技</tag>
          
          
            
@@ -260,33 +284,6 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-05-15-youhua-wr1200js.html</loc>
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    <data>
-        <display>
-        <title>YOUHUA WR1200JS</title>
-        <pubTime>2018-05-14T17:16:44.000Z</pubTime>
-        
-        <tag>路由器</tag>
-         
-        <tag>Padavan</tag>
-         
-        <tag>网络科技</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
-          
-             
-              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://newbietech.xyz//posts/2018-01-10-windows-subsystem-for-linux.html</loc>
     <lastmod>2018-07-22T06:55:47.599Z</lastmod>
     <data>
@@ -314,25 +311,51 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-08-hello-world.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-07-21-why-hexo.html</loc>
     <lastmod>2018-07-22T06:55:47.599Z</lastmod>
     <data>
         <display>
-        <title>Hello, World!</title>
-        <pubTime>2018-01-07T22:20:11.000Z</pubTime>
+        <title>为什么选择 Hexo</title>
+        <pubTime>2018-07-21T15:08:02.000Z</pubTime>
         
         <tag>Blog</tag>
          
         <tag>Hexo</tag>
          
-        <tag>CODING</tag>
          
-        <tag>GitHub</tag>
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-05-15-youhua-wr1200js.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>YOUHUA WR1200JS</title>
+        <pubTime>2018-05-14T17:16:44.000Z</pubTime>
+        
+        <tag>路由器</tag>
+         
+        <tag>Padavan</tag>
+         
+        <tag>网络科技</tag>
          
          
            
              
               <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
           
         </display>
     </data>
