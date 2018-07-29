@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-07-30-initial-setup-of-a-centos-7-server.html</loc>
+    <lastmod>2018-07-29T16:42:52.682Z</lastmod>
+    <data>
+        <display>
+        <title>基于 CentOS 7 系统设置与优化</title>
+        <pubTime>2018-07-29T16:36:37.000Z</pubTime>
+        
+        <tag>CentOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-28-totolink-a3004ns.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>TOTOLINK A3004NS</title>
+        <pubTime>2018-01-27T17:16:44.000Z</pubTime>
+        
+        <tag>路由器</tag>
+         
+        <tag>Padavan</tag>
+         
+        <tag>网络科技</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Hexo 在 CODING 和 GitHub 上搭建博客</title>
+        <pubTime>2018-01-10T15:39:49.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>CODING</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>Node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-14-hexo-deploy-and-backup-script.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 部署与备份脚本</title>
+        <pubTime>2018-01-14T08:57:33.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-07-22-hexo-config.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 配置</title>
+        <pubTime>2018-07-21T16:09:13.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>使用符号链接令 OneDrive 可以同步电脑上的任意文件夹</title>
+        <pubTime>2018-01-11T15:20:11.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+        <tag>OneDrive</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>为 Hexo 博客创建网站地图（Sitemap）</title>
+        <pubTime>2018-07-21T15:29:37.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>Sitemap</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>使用 QShell 备份七牛上的图片（静态资源）</title>
+        <pubTime>2018-01-14T07:58:30.000Z</pubTime>
+        
+        <tag>七牛</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-07-21-why-hexo.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>为什么选择 Hexo</title>
+        <pubTime>2018-07-21T15:08:02.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-07-19-using-hexo-on-windows-10.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>在 Windows 10 上使用 Hexo</title>
+        <pubTime>2018-07-19T05:27:49.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>CODING</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>Node.js Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-05-15-youhua-wr1200js.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>YOUHUA WR1200JS</title>
+        <pubTime>2018-05-14T17:16:44.000Z</pubTime>
+        
+        <tag>路由器</tag>
+         
+        <tag>Padavan</tag>
+         
+        <tag>网络科技</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-10-windows-subsystem-for-linux.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>适用于 Linux 的 Windows 子系统</title>
+        <pubTime>2018-01-10T15:02:56.000Z</pubTime>
+        
+        <tag>Windows</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://newbietech.xyz//posts/2018-01-08-hello-world.html</loc>
+    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <data>
+        <display>
+        <title>Hello, World!</title>
+        <pubTime>2018-01-07T22:20:11.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>CODING</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>

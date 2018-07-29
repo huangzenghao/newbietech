@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="功能简介近日，将 Windows 10 更新至 1709，发现“适用于 Linux 的 Windows 子系统”已经升级为正式版了。 原来保留着一台安装 Linux 的笔记本电脑在使用，对此并没有什么需求。最近，打算使用 Hexo 在 CODING 和 GitHub 上搭建一个博客，觉得可以将它派上用场。因为它有以下优点：  与系统紧密集成，Windows 下的各分区都自动加载到 /mnt/ 下，">
+<meta name="keywords" content="Windows,Linux,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="适用于 Linux 的 Windows 子系统">
+<meta property="og:url" content="https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html">
+<meta property="og:site_name" content="newbietech">
+<meta property="og:description" content="功能简介近日，将 Windows 10 更新至 1709，发现“适用于 Linux 的 Windows 子系统”已经升级为正式版了。 原来保留着一台安装 Linux 的笔记本电脑在使用，对此并没有什么需求。最近，打算使用 Hexo 在 CODING 和 GitHub 上搭建一个博客，觉得可以将它派上用场。因为它有以下优点：  与系统紧密集成，Windows 下的各分区都自动加载到 /mnt/ 下，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180110/174024066.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180110/174423798.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180110/175340558.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180110/174702581.png-newbietech.optimized">
+<meta property="og:updated_time" content="2018-07-22T06:55:47.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="适用于 Linux 的 Windows 子系统">
+<meta name="twitter:description" content="功能简介近日，将 Windows 10 更新至 1709，发现“适用于 Linux 的 Windows 子系统”已经升级为正式版了。 原来保留着一台安装 Linux 的笔记本电脑在使用，对此并没有什么需求。最近，打算使用 Hexo 在 CODING 和 GitHub 上搭建一个博客，觉得可以将它派上用场。因为它有以下优点：  与系统紧密集成，Windows 下的各分区都自动加载到 /mnt/ 下，">
+<meta name="twitter:image" content="https://cdn.huangzenghao.cn/newbietech/20180110/174024066.png-newbietech.optimized">
+
+
+
+
+
+
+  <link rel="canonical" href="https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>适用于 Linux 的 Windows 子系统 | newbietech</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56022167-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-56022167-2');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aacd28238e2d7eed7b9979d691a9c698";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">newbietech</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">分享并体验技术带来的便利</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="newbietech">
+      <meta itemprop="description" content="关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="newbietech">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">适用于 Linux 的 Windows 子系统
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-10 23:02:56" itemprop="dateCreated datePublished" datetime="2018-01-10T23:02:56+08:00">2018-01-10</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/2018-01-10-windows-subsystem-for-linux.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-01-10-windows-subsystem-for-linux.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h3><p>近日，将 Windows 10 更新至 1709，发现“适用于 Linux 的 Windows 子系统”已经升级为正式版了。</p>
+<p>原来保留着一台安装 Linux 的笔记本电脑在使用，对此并没有什么需求。最近，打算使用 Hexo 在 CODING 和 GitHub 上搭建一个博客，觉得可以将它派上用场。因为它有以下优点：</p>
+<ul>
+<li>与系统紧密集成，Windows 下的各分区都自动加载到<strong> /mnt/ </strong>下，方便两个系统之间访问；</li>
+<li>运行<strong> hexo server </strong>无需额外设置即可通过<strong> <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> </strong>进行预览；</li>
+<li>可以随时重置到初始状态，不会影响到 Windows 10 的正常使用。</li>
+</ul>
+<h3 id="功能启用"><a href="#功能启用" class="headerlink" title="功能启用"></a>功能启用</h3><p>我们可以在以下位置启用“适用于 Linux 的 Windows 子系统”：</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180110/174024066.png-newbietech.optimized" alt="WSL - 功能启用"></p>
+<p>点击“确定”后，系统将自动安装所需的文件，完成后将提示重启系统。</p>
+<h3 id="下载发行版"><a href="#下载发行版" class="headerlink" title="下载发行版"></a>下载发行版</h3><p>重启后，便可以在“Microsoft Store”下载适用的发行版了。</p>
+<p>我倾向于选择“Ubuntu”。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180110/174423798.png-newbietech.optimized" alt="WSL - 下载适用的发行版"></p>
+<h3 id="系统初始化及更新"><a href="#系统初始化及更新" class="headerlink" title="系统初始化及更新"></a>系统初始化及更新</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>在开始菜单中找到“Ubuntu”，点击运行后，系统自动进行安装，完成后，按提示输入用户名及密码，即可完成系统的安装。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180110/175340558.png-newbietech.optimized" alt="WSL - Ubuntu - 系统初始化"></p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><p>因 Ubuntu 的官方源在国内的访问速度比较慢，我改为使用国内源。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /etc/apt/sources.list /etc/apt/sources.list.orig</span><br><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>将国内源添加入新的 sources.list 文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 获取自：https://wiki.ubuntu.org.cn/%E6%A8%A1%E6%9D%BF:16.04source</span><br><span class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse</span><br><span class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse</span><br><span class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse</span><br><span class="line">##測試版源</span><br><span class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial-proposed main restricted universe multiverse</span><br><span class="line"># 源碼</span><br><span class="line">deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse</span><br><span class="line">deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line">deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse</span><br><span class="line">deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse</span><br><span class="line">##測試版源</span><br><span class="line">deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-proposed main restricted universe multiverse</span><br><span class="line"># Canonical 合作夥伴和附加</span><br><span class="line">deb http://archive.canonical.com/ubuntu/ xenial partner</span><br><span class="line"># deb http://extras.ubuntu.com/ubuntu/ xenial main</span><br></pre></td></tr></table></figure>
+<p>目前国内源使用的是阿里云的网络，我们也可以直接使用阿里云的源，或者网易、清华大学等国内源。</p>
+<p>接下来，就可以升级一下系统组件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
+<h3 id="子系统重置"><a href="#子系统重置" class="headerlink" title="子系统重置"></a>子系统重置</h3><p>跟 Windows 10 一样，“适用于 Linux 的 Windows 子系统”自带系统重置功能，在系统出现问题之后，如不能成功修复，我们只需要点击“重置”按钮，几分钟内便可以将其恢复至初始状态。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180110/174702581.png-newbietech.optimized" alt="WSL - 子系统重置"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>newbietech</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html" title="适用于 Linux 的 Windows 子系统">https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 署名 4.0 国际 (CC BY 4.0) 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/2018-01-08-hello-world.html" rel="next" title="Hello, World!">
+                <i class="fa fa-chevron-left"></i> Hello, World!
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html" rel="prev" title="使用 Hexo 在 CODING 和 GitHub 上搭建博客">
+                使用 Hexo 在 CODING 和 GitHub 上搭建博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">newbietech</p>
+              <p class="site-description motion-element" itemprop="description">关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能简介"><span class="nav-number">1.</span> <span class="nav-text">功能简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能启用"><span class="nav-number">2.</span> <span class="nav-text">功能启用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载发行版"><span class="nav-number">3.</span> <span class="nav-text">下载发行版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统初始化及更新"><span class="nav-number">4.</span> <span class="nav-text">系统初始化及更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新"><span class="nav-number">4.2.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子系统重置"><span class="nav-number">5.</span> <span class="nav-text">子系统重置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">newbietech</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" >Coding Pages</a> and  <a href="https://pages.github.com">GitHub Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'ijpfNeU8qqCHlvGI37RiaMq9-gzGzoHsz',
+        appKey: 'sGqQYFqV3lejT2hji6ElRR39',
+        placeholder: '在此输入评论内容',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: 
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

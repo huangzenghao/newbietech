@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="我的目标是：  在 CODING 和 GitHub 上启用 Pages 服务； 绑定自定义域名； 强制 HTTPS 访问； 在 CODING 上创建 hexo 分支，保存源文件，以便在不同电脑间使用时同步。  准备工作域名解析我提前将域名以 cname 的方式解析至 pages.coding.me ，以便绑定自定义域名的同时，可以成功申请 SSL/TLS 证书。  具体操作可参照域名解析服务商的文">
+<meta name="keywords" content="Blog,CODING,GitHub,Node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Hexo 在 CODING 和 GitHub 上搭建博客">
+<meta property="og:url" content="https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html">
+<meta property="og:site_name" content="newbietech">
+<meta property="og:description" content="我的目标是：  在 CODING 和 GitHub 上启用 Pages 服务； 绑定自定义域名； 强制 HTTPS 访问； 在 CODING 上创建 hexo 分支，保存源文件，以便在不同电脑间使用时同步。  准备工作域名解析我提前将域名以 cname 的方式解析至 pages.coding.me ，以便绑定自定义域名的同时，可以成功申请 SSL/TLS 证书。  具体操作可参照域名解析服务商的文">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180111/002531974.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180111/004422882.png-newbietech.optimized">
+<meta property="og:updated_time" content="2018-07-22T06:55:47.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Hexo 在 CODING 和 GitHub 上搭建博客">
+<meta name="twitter:description" content="我的目标是：  在 CODING 和 GitHub 上启用 Pages 服务； 绑定自定义域名； 强制 HTTPS 访问； 在 CODING 上创建 hexo 分支，保存源文件，以便在不同电脑间使用时同步。  准备工作域名解析我提前将域名以 cname 的方式解析至 pages.coding.me ，以便绑定自定义域名的同时，可以成功申请 SSL/TLS 证书。  具体操作可参照域名解析服务商的文">
+<meta name="twitter:image" content="https://cdn.huangzenghao.cn/newbietech/20180111/002531974.png-newbietech.optimized">
+
+
+
+
+
+
+  <link rel="canonical" href="https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>使用 Hexo 在 CODING 和 GitHub 上搭建博客 | newbietech</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56022167-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-56022167-2');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aacd28238e2d7eed7b9979d691a9c698";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">newbietech</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">分享并体验技术带来的便利</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="newbietech">
+      <meta itemprop="description" content="关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="newbietech">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用 Hexo 在 CODING 和 GitHub 上搭建博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-10 23:39:49" itemprop="dateCreated datePublished" datetime="2018-01-10T23:39:49+08:00">2018-01-10</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我的目标是：</p>
+<ul>
+<li>在 CODING 和 GitHub 上启用 Pages 服务；</li>
+<li>绑定自定义域名；</li>
+<li>强制 HTTPS 访问；</li>
+<li>在 CODING 上创建<strong> hexo </strong>分支，保存源文件，以便在不同电脑间使用时同步。</li>
+</ul>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h4><p>我提前将域名以<strong> cname </strong>的方式解析至<strong> pages.coding.me </strong>，以便绑定自定义域名的同时，可以成功申请 SSL/TLS 证书。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180111/002531974.png-newbietech.optimized" alt="域名解析"></p>
+<p>具体操作可参照域名解析服务商的文档。</p>
+<h4 id="添加部署密钥"><a href="#添加部署密钥" class="headerlink" title="添加部署密钥"></a>添加部署密钥</h4><p>由于我原先已经为 CODING 和 GitHub 添加过密钥，本次就不再生成，直接将密钥复制过来并修改权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir .ssh</span><br><span class="line">cp /mnt/d/newbietech/* ~/.ssh/</span><br><span class="line">chmod 600 .ssh/id_rsa</span><br><span class="line">chmod 644 .ssh/id_rsa.pub</span><br><span class="line">chmod 644 .ssh/known_hosts</span><br></pre></td></tr></table></figure>
+<p>修改权限后，可以使用<strong> ls -l .ssh/ </strong>命令查看所有者和读写权限是否正确。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">total 12</span><br><span class="line">-rw------- 1 newbietech newbietech 3326 Jan 10 15:58 id_rsa</span><br><span class="line">-rw-r--r-- 1 newbietech newbietech  733 Jan 10 15:58 id_rsa.pub</span><br><span class="line">-rw-r--r-- 1 newbietech newbietech 2652 Jan 10 15:58 known_hosts</span><br></pre></td></tr></table></figure>
+<p>如看到与上面类似的内容，表明已经正确设置了读写权限。</p>
+<p>如果未创建密钥，可以使用以下命令创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"newbietech"</span></span><br></pre></td></tr></table></figure>
+<p>根据提示创建成功后，将公钥，即<strong> id_rsa.pub </strong>文件的内容粘贴到 CODING 和 GitHub 相应的位置上，即完成部署密钥的添加。</p>
+<p>为方便使用，创建或复制密钥时不要使用<strong> sudo </strong>提权，否则进行部署操作时不使用<strong> sudo </strong>提权则会提示权限不足。</p>
+<h3 id="Git-初始化"><a href="#Git-初始化" class="headerlink" title="Git 初始化"></a>Git 初始化</h3><h4 id="定义全局变量"><a href="#定义全局变量" class="headerlink" title="定义全局变量"></a>定义全局变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"newbietech"</span></span><br><span class="line">git config --global user.email <span class="string">"newbietech@newbietech.cn"</span></span><br></pre></td></tr></table></figure>
+<h4 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h4><p>因已经添加了部署密钥，我们可以测试一下与 CODING 和 GitHub 的连接是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">ssh -T git@git.coding.net</span><br></pre></td></tr></table></figure>
+<p>当我们看到 GitHub 和 CODING 均返回类似以下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hi newbietech! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line">---------------------------------------------------------------------------------------</span><br><span class="line">Coding 提示: Hello newbietech, You&apos;ve connected to Coding.net via SSH. This is a personal key.</span><br><span class="line">newbietech，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</span><br></pre></td></tr></table></figure>
+<p>则表明已经可以成功使用 SSH 方式连接上。</p>
+<p>注：由于我们添加了部署密钥，建议所有的操作均使用 SSH 方式进行，这样便可以无需输入用户名及密码（如果创建密钥时如果设置了密码，则还是需要输入密码）。</p>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 有多种方式，我采用的是最简单的方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nodejs npm -y</span><br></pre></td></tr></table></figure>
+<p>由于使用使用这种方式安装，可执行文件为<strong> nodejs </strong>，而 Hexo 使用的是<strong> node </strong>，所以我们需要为它创建一个链接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/bin/nodejs /usr/bin/node</span><br></pre></td></tr></table></figure>
+<p>至此，Node.js 安装完成。</p>
+<h3 id="安装-Hexo-及初始化"><a href="#安装-Hexo-及初始化" class="headerlink" title="安装 Hexo 及初始化"></a>安装 Hexo 及初始化</h3><h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h4 id="创建工作文件夹"><a href="#创建工作文件夹" class="headerlink" title="创建工作文件夹"></a>创建工作文件夹</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/d/Blogs</span><br><span class="line">git <span class="built_in">clone</span> git@git.coding.net:newbietech/newbietech.git</span><br></pre></td></tr></table></figure>
+<h4 id="创建-hexo-分支"><a href="#创建-hexo-分支" class="headerlink" title="创建 hexo 分支"></a>创建 hexo 分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> newbietech</span><br><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure>
+<h4 id="Hexo-初始化"><a href="#Hexo-初始化" class="headerlink" title="Hexo 初始化"></a>Hexo 初始化</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo</span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">sudo npm install</span><br><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h4 id="安装-NexT-主题"><a href="#安装-NexT-主题" class="headerlink" title="安装 NexT 主题"></a>安装 NexT 主题</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add git@github.com:theme-next/hexo-theme-next.git hexo/themes/next</span><br></pre></td></tr></table></figure>
+<p><del>git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:theme-next/hexo-theme-next.git themes/next</del></p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>访问<strong> <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> </strong>，可以看到 Hexo 的演示页面，即表明 Hexo 已经正常安装。</p>
+<h4 id="启用-Pages-服务"><a href="#启用-Pages-服务" class="headerlink" title="启用 Pages 服务"></a>启用 Pages 服务</h4><p>我启用了 CODING 和 GitHub 的 Pages 服务，部署来源均设置为<strong> master 分支</strong>，当然也可以参照说明文档设置为其他分支。</p>
+<p>绑定域名的同时，如果已经正确设置了域名解析，则会成功自动申请 SSL/TLS 证书，如域名解析设置不正确，或未生效，则需待正确设置并生效后，方可成功申请到证书。</p>
+<p>强制 HTTPS 访问处我设置为开启。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180111/004422882.png-newbietech.optimized" alt="启用 Pages 服务"></p>
+<h3 id="测试-Git-部署"><a href="#测试-Git-部署" class="headerlink" title="测试 Git 部署"></a>测试 Git 部署</h3><p>修改<strong> _config.yml </strong>文件，在<strong> deploy </strong>一节中设置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    - type: git</span><br><span class="line">      repo: git@github.com:newbietech/newbietech.git,master</span><br><span class="line">    - type: git</span><br><span class="line">      repo: git@git.coding.net:newbietech/newbietech.git,master</span><br></pre></td></tr></table></figure>
+<p>注：以上设置非实际地址。</p>
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>即可部署到<strong> master 分支</strong>，此时输入绑定的域名，应该可以看到部署后的页面。</p>
+<h3 id="更新-hexo-分支"><a href="#更新-hexo-分支" class="headerlink" title="更新 hexo 分支"></a>更新 hexo 分支</h3><p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Site updated."</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+<p>可将更新后的源文件更新至 hexo 分支。</p>
+<h3 id="备份恢复"><a href="#备份恢复" class="headerlink" title="备份恢复"></a>备份恢复</h3><h4 id="无备份数据"><a href="#无备份数据" class="headerlink" title="无备份数据"></a>无备份数据</h4><p>在无备份数据或新的电脑上，我们可以随时将 hexo 分支下载下来，重新安装 Hexo 组件，即可继续更新博客：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br><span class="line"><span class="built_in">cd</span> /mnt/d/Blogs</span><br><span class="line">git <span class="built_in">clone</span> -b hexo git@git.coding.net:newbietech/newbietech.git</span><br><span class="line"><span class="built_in">cd</span> newbietech/hexo</span><br><span class="line">sudo npm install</span><br><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>注：备份恢复后，安装 Hexo 时不可运行<strong> hexo init </strong>重新进行 Hexo 初始化。</p>
+<h4 id="有备份数据"><a href="#有备份数据" class="headerlink" title="有备份数据"></a>有备份数据</h4><p>如果电脑上存在备份数据，我们可以：</p>
+<ol>
+<li>将备份数据删除，重新按上述步骤下载 hexo 分支并安装 Hexo 组件；</li>
+<li>使用<strong> git pull </strong>命令同步数据并安装 Hexo 组件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br><span class="line"><span class="built_in">cd</span> ~/Blogs/newbietech/</span><br><span class="line">git pull</span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">sudo npm install</span><br><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h3><p>2018-01-18：更新“安装 NexT 主题”地址。</p>
+<p>2018-01-28：“备份恢复”一节针对是否存在备份数据的情况进行处理。</p>
+<p>2018-05-14：修改以“子模块”的方式安装主题。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>newbietech</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html" title="使用 Hexo 在 CODING 和 GitHub 上搭建博客">https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 署名 4.0 国际 (CC BY 4.0) 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Blog/" rel="tag"># Blog</a>
+          
+            <a href="/tags/CODING/" rel="tag"># CODING</a>
+          
+            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/2018-01-10-windows-subsystem-for-linux.html" rel="next" title="适用于 Linux 的 Windows 子系统">
+                <i class="fa fa-chevron-left"></i> 适用于 Linux 的 Windows 子系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html" rel="prev" title="使用符号链接令 OneDrive 可以同步电脑上的任意文件夹">
+                使用符号链接令 OneDrive 可以同步电脑上的任意文件夹 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">newbietech</p>
+              <p class="site-description motion-element" itemprop="description">关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#域名解析"><span class="nav-number">1.1.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加部署密钥"><span class="nav-number">1.2.</span> <span class="nav-text">添加部署密钥</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-初始化"><span class="nav-number">2.</span> <span class="nav-text">Git 初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义全局变量"><span class="nav-number">2.1.</span> <span class="nav-text">定义全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试连接"><span class="nav-number">2.2.</span> <span class="nav-text">测试连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Node-js"><span class="nav-number">3.</span> <span class="nav-text">安装 Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Hexo-及初始化"><span class="nav-number">4.</span> <span class="nav-text">安装 Hexo 及初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">4.1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建工作文件夹"><span class="nav-number">4.2.</span> <span class="nav-text">创建工作文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-hexo-分支"><span class="nav-number">4.3.</span> <span class="nav-text">创建 hexo 分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo-初始化"><span class="nav-number">4.4.</span> <span class="nav-text">Hexo 初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-NexT-主题"><span class="nav-number">4.5.</span> <span class="nav-text">安装 NexT 主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试"><span class="nav-number">4.6.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用-Pages-服务"><span class="nav-number">4.7.</span> <span class="nav-text">启用 Pages 服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试-Git-部署"><span class="nav-number">5.</span> <span class="nav-text">测试 Git 部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-hexo-分支"><span class="nav-number">6.</span> <span class="nav-text">更新 hexo 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备份恢复"><span class="nav-number">7.</span> <span class="nav-text">备份恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无备份数据"><span class="nav-number">7.1.</span> <span class="nav-text">无备份数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有备份数据"><span class="nav-number">7.2.</span> <span class="nav-text">有备份数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新记录"><span class="nav-number">8.</span> <span class="nav-text">更新记录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">newbietech</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" >Coding Pages</a> and  <a href="https://pages.github.com">GitHub Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'ijpfNeU8qqCHlvGI37RiaMq9-gzGzoHsz',
+        appKey: 'sGqQYFqV3lejT2hji6ElRR39',
+        placeholder: '在此输入评论内容',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: 
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

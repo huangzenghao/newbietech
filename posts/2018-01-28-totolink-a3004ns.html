@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="最近把家里的网络稍作升级，主要就是购入了 TOTOLINK A3004NS 这款路由器，将家里的网络改为了全千兆网络。 推广链接：点击此链接前往京东购买 硬件配置TOTOLINK A3004NS 的硬件配置如下：123456SOC：MT7621AT 双核 880MHzRAM：DDR3 256MB（南亚）Flash：16MB SPI无线芯片：MT7612EN + MT7602EN路由器提供有1个千兆">
+<meta name="keywords" content="路由器,Padavan,网络科技">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TOTOLINK A3004NS">
+<meta property="og:url" content="https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html">
+<meta property="og:site_name" content="newbietech">
+<meta property="og:description" content="最近把家里的网络稍作升级，主要就是购入了 TOTOLINK A3004NS 这款路由器，将家里的网络改为了全千兆网络。 推广链接：点击此链接前往京东购买 硬件配置TOTOLINK A3004NS 的硬件配置如下：123456SOC：MT7621AT 双核 880MHzRAM：DDR3 256MB（南亚）Flash：16MB SPI无线芯片：MT7612EN + MT7602EN路由器提供有1个千兆">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/AD/20180128/012553475.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180128/013603511.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180128/014152838.png-newbietech.optimized">
+<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180128/015250691.png-newbietech.optimized">
+<meta property="og:updated_time" content="2018-07-22T06:55:47.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TOTOLINK A3004NS">
+<meta name="twitter:description" content="最近把家里的网络稍作升级，主要就是购入了 TOTOLINK A3004NS 这款路由器，将家里的网络改为了全千兆网络。 推广链接：点击此链接前往京东购买 硬件配置TOTOLINK A3004NS 的硬件配置如下：123456SOC：MT7621AT 双核 880MHzRAM：DDR3 256MB（南亚）Flash：16MB SPI无线芯片：MT7612EN + MT7602EN路由器提供有1个千兆">
+<meta name="twitter:image" content="https://cdn.huangzenghao.cn/AD/20180128/012553475.png-newbietech.optimized">
+
+
+
+
+
+
+  <link rel="canonical" href="https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>TOTOLINK A3004NS | newbietech</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56022167-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-56022167-2');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aacd28238e2d7eed7b9979d691a9c698";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">newbietech</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">分享并体验技术带来的便利</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="newbietech">
+      <meta itemprop="description" content="关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="newbietech">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TOTOLINK A3004NS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-28 01:16:44" itemprop="dateCreated datePublished" datetime="2018-01-28T01:16:44+08:00">2018-01-28</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/2018-01-28-totolink-a3004ns.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-01-28-totolink-a3004ns.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近把家里的网络稍作升级，主要就是购入了 TOTOLINK A3004NS 这款路由器，将家里的网络改为了全千兆网络。</p>
+<p><img src="https://cdn.huangzenghao.cn/AD/20180128/012553475.png-newbietech.optimized" alt="AD - 京东 - TOTOLINK A3004NS"><br><a href="https://union-click.jd.com/jdc?d=JcNCri" target="_blank" rel="noopener">推广链接：点击此链接前往京东购买</a></p>
+<h3 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h3><p>TOTOLINK A3004NS 的硬件配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SOC：MT7621AT 双核 880MHz</span><br><span class="line">RAM：DDR3 256MB（南亚）</span><br><span class="line">Flash：16MB SPI</span><br><span class="line">无线芯片：MT7612EN + MT7602EN</span><br><span class="line">路由器提供有1个千兆WAN口、4个千兆LAN口、1个USB 3.0接口</span><br><span class="line">无线芯片：MT7612EN + MT7602EN (据传2.4G 5G 均有外置PA)</span><br></pre></td></tr></table></figure></p>
+<p>数据来源：<a href="http://p4davan.80x86.io/blog/2017/06/24/totolink-a3004ns-and-hiwifi-b70-firmware-released/" target="_blank" rel="noopener">http://p4davan.80x86.io/blog/2017/06/24/totolink-a3004ns-and-hiwifi-b70-firmware-released/</a></p>
+<h3 id="刷入-Padavan-固件"><a href="#刷入-Padavan-固件" class="headerlink" title="刷入 Padavan 固件"></a>刷入 Padavan 固件</h3><p>机器到手后即刷了“荒野无灯”的 Padavan 固件，步骤如下：</p>
+<h4 id="记录-MAC-地址"><a href="#记录-MAC-地址" class="headerlink" title="记录 MAC 地址"></a>记录 MAC 地址</h4><p>由于 TOTOLINK A3004NS 的外壳和包装盒中没有印有 MAC 地址，我们需要进入官方固件设置界面中查询并记录 MAC 地址。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180128/013603511.png-newbietech.optimized" alt="TOTOLINK A3004NS - 记录 MAC 地址"></p>
+<h4 id="刷入中间固件"><a href="#刷入中间固件" class="headerlink" title="刷入中间固件"></a>刷入中间固件</h4><p>文件名：STOCK_ROM_UPGRADE_A3004NS_3.4.3.9-099_20170307-0247.trx</p>
+<p>可直接在官方固件中刷入：</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180128/014152838.png-newbietech.optimized" alt="TOTOLINK A3004NS - 刷入中间固件"></p>
+<h4 id="备份重要数据"><a href="#备份重要数据" class="headerlink" title="备份重要数据"></a>备份重要数据</h4><p>刷入中间固件后，我们可以通过 SSH 方式登录路由器，运行以下命令备份 eeprom 的数据：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/mtd2 of=eeprom.bin</span><br></pre></td></tr></table></figure>
+<p>备份生成的文件，可以使用 WinSCP 或 FileZilla 等工具从路由器中拷出来。</p>
+<p>如果刷入第三方固件后无线信号非常差，一般刷入所备份的 eeprom 即可解决。</p>
+<h4 id="恢复-MAC-地址"><a href="#恢复-MAC-地址" class="headerlink" title="恢复 MAC 地址"></a>恢复 MAC 地址</h4><p>如刷入第三方固件后，MAC 地址丢失了，可以通过以下方法恢复：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan_eeprom_mac F4-28-XX-XX-XX-XC</span><br><span class="line">wan_eeprom_mac F4-28-XX-XX-XX-XD</span><br><span class="line">sync</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<h4 id="刷入-Padavan-固件-1"><a href="#刷入-Padavan-固件-1" class="headerlink" title="刷入 Padavan 固件"></a>刷入 Padavan 固件</h4><p>文件名：A3004NS_3.4.3.9-099_20170910-2159.trx</p>
+<p>在中间固件后台直刷即可。</p>
+<h3 id="启用隐藏功能"><a href="#启用隐藏功能" class="headerlink" title="启用隐藏功能"></a>启用隐藏功能</h3><p>我们可以通过运行以下命令启用荒野无灯的 Padavan 固件中两个我需要用到的隐藏功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvram <span class="built_in">set</span> google_fu_mode=0xDEADBEEF</span><br><span class="line">nvram <span class="built_in">set</span> ext_show_lse=1</span><br><span class="line">nvram commit</span><br></pre></td></tr></table></figure>
+<p>可以以 SSH 方式登录路由器或在“Administration - Console”中运行。如在“Administration - Console”中操作，则在输入框中逐条输入上述命令并点击“Refresh”，值得注意的是，界面不会有任何反馈信息，直到 3 条命令全部执行完毕，刷新界面可以看到左下角及右上角中有隐藏功能的菜单和按钮出现。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180128/015250691.png-newbietech.optimized" alt="TOTOLINK A3004NS - 启用隐藏功能"></p>
+<p>如果恢复出厂设置时清除了 NVRAM 的信息，可以重新运行这 3 条命令将隐藏功能重新调出来。</p>
+<p>注：</p>
+<ol>
+<li><p>我在刷入荒野无灯的 Padavan 固件的过程中，并没有出现任何异常，也没有出现无线信号变差或 MAC 地址丢失的问题。</p>
+</li>
+<li><p>TOTOLINK A3004NS 无论性能还是无线信号，均优于之前我使用的斐讯 K2，作为一款售价不足 300 元的路由器，我认为它还是物有所值的。</p>
+</li>
+<li><p>荒野无灯的 Padavan 固件是我较为喜欢的固件之一，没有太多令人眼花缭乱的功能，有利于稳定运行。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>newbietech</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html" title="TOTOLINK A3004NS">https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 署名 4.0 国际 (CC BY 4.0) 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/路由器/" rel="tag"># 路由器</a>
+          
+            <a href="/tags/Padavan/" rel="tag"># Padavan</a>
+          
+            <a href="/tags/网络科技/" rel="tag"># 网络科技</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/2018-01-14-hexo-deploy-and-backup-script.html" rel="next" title="Hexo 部署与备份脚本">
+                <i class="fa fa-chevron-left"></i> Hexo 部署与备份脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/2018-05-15-youhua-wr1200js.html" rel="prev" title="YOUHUA WR1200JS">
+                YOUHUA WR1200JS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">newbietech</p>
+              <p class="site-description motion-element" itemprop="description">关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件配置"><span class="nav-number">1.</span> <span class="nav-text">硬件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刷入-Padavan-固件"><span class="nav-number">2.</span> <span class="nav-text">刷入 Padavan 固件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#记录-MAC-地址"><span class="nav-number">2.1.</span> <span class="nav-text">记录 MAC 地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#刷入中间固件"><span class="nav-number">2.2.</span> <span class="nav-text">刷入中间固件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备份重要数据"><span class="nav-number">2.3.</span> <span class="nav-text">备份重要数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复-MAC-地址"><span class="nav-number">2.4.</span> <span class="nav-text">恢复 MAC 地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#刷入-Padavan-固件-1"><span class="nav-number">2.5.</span> <span class="nav-text">刷入 Padavan 固件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用隐藏功能"><span class="nav-number">3.</span> <span class="nav-text">启用隐藏功能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">newbietech</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom">Hosted by <a href="https://pages.coding.me" >Coding Pages</a> and  <a href="https://pages.github.com">GitHub Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'ijpfNeU8qqCHlvGI37RiaMq9-gzGzoHsz',
+        appKey: 'sGqQYFqV3lejT2hji6ElRR39',
+        placeholder: '在此输入评论内容',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: 
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
