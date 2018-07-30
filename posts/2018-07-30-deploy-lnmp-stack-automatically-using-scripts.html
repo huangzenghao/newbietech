@@ -108,27 +108,29 @@
 
 
 
-  <meta name="description" content="全局配置除前面已经提到的地方，如 Sitemap 及 Deployment 项，_config.yml 中主要修改以下地方：  站点信息即为 Site 项，填写站点的标题、副标题等，根据自己的实际情况填写即可，其中语言设置一项，根据主题的 languages 目录下对应语言的 yml 文件名填写。 永久链接我们倾向于采用以下格式： 1/posts/:year-:month-:day-:title.">
-<meta name="keywords" content="Blog,Hexo">
+  <meta name="description" content="曾经比较喜欢使用二进制安装各组件，而对脚本较为抗拒。现在习惯了使用脚本，觉得它实在是太好用了！ 二进制安装组件在 Debian/Ubuntu 或 CentOS 下，我们可以很方便地使用 apt 或 yum 工具安装相应的组件包，再使用 vim 等编辑器编辑相关的配置文件，即可完成组件的安装及配置。 但这种部署模式的缺点是需要消耗大量的时间和精力，我们可以借助脚本实现自动部署。 脚本部署lnmp.o">
+<meta name="keywords" content="LNMP,脚本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 配置">
-<meta property="og:url" content="https://newbietech.xyz/posts/2018-07-22-hexo-config.html">
+<meta property="og:title" content="使用脚本快速搭建 LNMP 环境">
+<meta property="og:url" content="https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html">
 <meta property="og:site_name" content="newbietech">
-<meta property="og:description" content="全局配置除前面已经提到的地方，如 Sitemap 及 Deployment 项，_config.yml 中主要修改以下地方：  站点信息即为 Site 项，填写站点的标题、副标题等，根据自己的实际情况填写即可，其中语言设置一项，根据主题的 languages 目录下对应语言的 yml 文件名填写。 永久链接我们倾向于采用以下格式： 1/posts/:year-:month-:day-:title.">
+<meta property="og:description" content="曾经比较喜欢使用二进制安装各组件，而对脚本较为抗拒。现在习惯了使用脚本，觉得它实在是太好用了！ 二进制安装组件在 Debian/Ubuntu 或 CentOS 下，我们可以很方便地使用 apt 或 yum 工具安装相应的组件包，再使用 vim 等编辑器编辑相关的配置文件，即可完成组件的安装及配置。 但这种部署模式的缺点是需要消耗大量的时间和精力，我们可以借助脚本实现自动部署。 脚本部署lnmp.o">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://cdn.huangzenghao.cn/newbietech/20180722-001231806.png-newbietech.optimized">
-<meta property="og:updated_time" content="2018-07-22T06:55:47.599Z">
+<meta property="og:image" content="https://static.oneinstack.com/images/install_oneinstack.png">
+<meta property="og:image" content="https://static.oneinstack.com/images/addons.png">
+<meta property="og:image" content="https://static.oneinstack.com/images/vhost.png">
+<meta property="og:updated_time" content="2018-07-30T14:49:59.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 配置">
-<meta name="twitter:description" content="全局配置除前面已经提到的地方，如 Sitemap 及 Deployment 项，_config.yml 中主要修改以下地方：  站点信息即为 Site 项，填写站点的标题、副标题等，根据自己的实际情况填写即可，其中语言设置一项，根据主题的 languages 目录下对应语言的 yml 文件名填写。 永久链接我们倾向于采用以下格式： 1/posts/:year-:month-:day-:title.">
-<meta name="twitter:image" content="https://cdn.huangzenghao.cn/newbietech/20180722-001231806.png-newbietech.optimized">
+<meta name="twitter:title" content="使用脚本快速搭建 LNMP 环境">
+<meta name="twitter:description" content="曾经比较喜欢使用二进制安装各组件，而对脚本较为抗拒。现在习惯了使用脚本，觉得它实在是太好用了！ 二进制安装组件在 Debian/Ubuntu 或 CentOS 下，我们可以很方便地使用 apt 或 yum 工具安装相应的组件包，再使用 vim 等编辑器编辑相关的配置文件，即可完成组件的安装及配置。 但这种部署模式的缺点是需要消耗大量的时间和精力，我们可以借助脚本实现自动部署。 脚本部署lnmp.o">
+<meta name="twitter:image" content="https://static.oneinstack.com/images/install_oneinstack.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://newbietech.xyz/posts/2018-07-22-hexo-config.html"/>
+  <link rel="canonical" href="https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html"/>
 
 
 
@@ -138,7 +140,7 @@
   };
 </script>
 
-  <title>Hexo 配置 | newbietech</title>
+  <title>使用脚本快速搭建 LNMP 环境 | newbietech</title>
   
 
 
@@ -306,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-07-22-hexo-config.html">
+    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="newbietech">
@@ -323,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 配置
+          <h1 class="post-title" itemprop="name headline">使用脚本快速搭建 LNMP 环境
               
             
           </h1>
@@ -348,7 +350,7 @@
                 
               
 
-              <time title="创建时间：2018-07-22 00:09:13" itemprop="dateCreated datePublished" datetime="2018-07-22T00:09:13+08:00">2018-07-22</time>
+              <time title="创建时间：2018-07-30 22:26:51" itemprop="dateCreated datePublished" datetime="2018-07-30T22:26:51+08:00">2018-07-30</time>
             
 
             
@@ -366,14 +368,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
 
                 
                 
@@ -388,8 +390,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/2018-07-22-hexo-config.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-07-22-hexo-config.html" itemprop="commentCount"></span>
+                <a href="/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -417,12 +419,24 @@
       
 
       
-        <h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><p>除前面已经提到的地方，如 Sitemap 及 Deployment 项，_config.yml 中主要修改以下地方：</p>
-<p><img src="https://cdn.huangzenghao.cn/newbietech/20180722-001231806.png-newbietech.optimized" alt="Hexo - _config.yml"></p>
-<h4 id="站点信息"><a href="#站点信息" class="headerlink" title="站点信息"></a>站点信息</h4><p>即为 Site 项，填写站点的标题、副标题等，根据自己的实际情况填写即可，其中语言设置一项，根据主题的 languages 目录下对应语言的 yml 文件名填写。</p>
-<h4 id="永久链接"><a href="#永久链接" class="headerlink" title="永久链接"></a>永久链接</h4><p>我们倾向于采用以下格式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/posts/:year-:month-:day-:title.html</span><br></pre></td></tr></table></figure>
-<p>这样，博文可以保存在 posts 目录下，且以日期排序，站点目录不致过于混乱。</p>
+        <p>曾经比较喜欢使用二进制安装各组件，而对脚本较为抗拒。现在习惯了使用脚本，觉得它实在是太好用了！</p>
+<h3 id="二进制安装组件"><a href="#二进制安装组件" class="headerlink" title="二进制安装组件"></a>二进制安装组件</h3><p>在 Debian/Ubuntu 或 CentOS 下，我们可以很方便地使用 apt 或 yum 工具安装相应的组件包，再使用 vim 等编辑器编辑相关的配置文件，即可完成组件的安装及配置。</p>
+<p>但这种部署模式的缺点是需要消耗大量的时间和精力，我们可以借助脚本实现自动部署。</p>
+<h3 id="脚本部署"><a href="#脚本部署" class="headerlink" title="脚本部署"></a>脚本部署</h3><p><a href="https://lnmp.org" target="_blank" rel="noopener">lnmp.org</a> 和 <a href="https://oneinstack.com" target="_blank" rel="noopener">oneinstack.com</a> 都已为我们提供了很不错的一键安装包，它们已在众多的云服务器及操作系统上测试通过，可以放心使用。</p>
+<p>以下我们以 OneinStack 为例，按以下指引，我们只需 50 分钟左右即可在 Vultr 最低配的 VPS 上搭建好完整的 LNMP 环境。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget screen curl python</span><br><span class="line">wget http://mirrors.linuxeye.com/oneinstack.tar.gz</span><br><span class="line">tar xzf oneinstack.tar.gz</span><br><span class="line"><span class="built_in">cd</span> oneinstack </span><br><span class="line">screen -S oneinstack</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://static.oneinstack.com/images/install_oneinstack.png" alt="OneinStack - Install"></p>
+<p><img src="https://static.oneinstack.com/images/addons.png" alt="OneinStack - addons"></p>
+<p><img src="https://static.oneinstack.com/images/vhost.png" alt="OneinStack - vhost"></p>
+<p>详见：<a href="https://oneinstack.com/install/" target="_blank" rel="noopener">https://oneinstack.com/install/</a></p>
+<h3 id="无人值守安装"><a href="#无人值守安装" class="headerlink" title="无人值守安装"></a>无人值守安装</h3><p>目前 <a href="https://lnmp.org" target="_blank" rel="noopener">lnmp.org</a> 和 <a href="https://oneinstack.com" target="_blank" rel="noopener">oneinstack.com</a> 还提供了无人值守的安装方式，我们以 LNMP 为例：</p>
+<h4 id="生成安装命令"><a href="#生成安装命令" class="headerlink" title="生成安装命令"></a>生成安装命令</h4><p>使用浏览器访问：</p>
+<p><a href="https://lnmp.org/auto.html" target="_blank" rel="noopener">https://lnmp.org/auto.html</a></p>
+<p>根据我们的需求，生成安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://soft.vpser.net/lnmp/lnmp1.5.tar.gz -cO lnmp1.5.tar.gz &amp;&amp; tar zxf lnmp1.5.tar.gz &amp;&amp; cd lnmp1.5 &amp;&amp; LNMP_Auto=&quot;y&quot; DBSelect=&quot;9&quot; DB_Root_Password=&quot;qwertyzxcvbn&quot; InstallInnodb=&quot;y&quot; PHPSelect=&quot;8&quot; SelectMalloc=&quot;2&quot; ./install.sh lnmp</span><br></pre></td></tr></table></figure>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>使用 PuTTY 等工具登录服务器，运行生成的命令，我们就可以忙其他事情了，如果没有意外情况出现，一定时间后，便可以按我们的选择完成各组件的安装。</p>
+<p>我们在 <a href="https://www.vultr.com/?ref=6868242" target="_blank" rel="noopener">Vultr</a> 的低配机型（512M 内存）中，约需 50 分钟可以完成，而在 <a href="https://bandwagonhost.com/aff.php?aff=26311" target="_blank" rel="noopener">BandwagonHost VPS</a> 19.9美元的实例（1G 内存）中，约需 25 分钟即可完成。</p>
+<p>无人值守安装指引详见：<a href="https://lnmp.org/faq/v1-5-auto-install.html" target="_blank" rel="noopener">https://lnmp.org/faq/v1-5-auto-install.html</a></p>
 
       
     </div>
@@ -444,7 +458,7 @@
     <strong>本文作者： </strong>newbietech</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://newbietech.xyz/posts/2018-07-22-hexo-config.html" title="Hexo 配置">https://newbietech.xyz/posts/2018-07-22-hexo-config.html</a>
+    <a href="https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html" title="使用脚本快速搭建 LNMP 环境">https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 署名 4.0 国际 (CC BY 4.0) 许可协议。转载请注明出处！</li>
@@ -457,9 +471,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Blog/" rel="tag"># Blog</a>
+            <a href="/tags/LNMP/" rel="tag"># LNMP</a>
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/脚本/" rel="tag"># 脚本</a>
           
         </div>
       
@@ -472,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html" rel="next" title="为 Hexo 博客创建网站地图（Sitemap）">
-                <i class="fa fa-chevron-left"></i> 为 Hexo 博客创建网站地图（Sitemap）
+              <a href="/posts/2018-07-30-set-hostname.html" rel="next" title="设置 hostname">
+                <i class="fa fa-chevron-left"></i> 设置 hostname
               </a>
             
           </div>
@@ -481,10 +495,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/2018-07-30-initial-setup-of-a-centos-7-server.html" rel="prev" title="基于 CentOS 7 系统设置与优化">
-                基于 CentOS 7 系统设置与优化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -663,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">1.</span> <span class="nav-text">全局配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#站点信息"><span class="nav-number">1.1.</span> <span class="nav-text">站点信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#永久链接"><span class="nav-number">1.2.</span> <span class="nav-text">永久链接</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制安装组件"><span class="nav-number">1.</span> <span class="nav-text">二进制安装组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本部署"><span class="nav-number">2.</span> <span class="nav-text">脚本部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无人值守安装"><span class="nav-number">3.</span> <span class="nav-text">无人值守安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成安装命令"><span class="nav-number">3.1.</span> <span class="nav-text">生成安装命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.2.</span> <span class="nav-text">安装</span></a></li></ol></li></ol></div>
             
 
           </div>

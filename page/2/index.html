@@ -303,6 +303,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="newbietech">
+      <meta itemprop="description" content="关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="newbietech">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html" itemprop="url">
+                  使用 QShell 备份七牛上的图片（静态资源）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-14 15:58:30" itemprop="dateCreated datePublished" datetime="2018-01-14T15:58:30+08:00">2018-01-14</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本博客的图片使用七牛提供的<strong>对象存储</strong>和<strong>融合 CDN 加速</strong>功能。</p>
+<p>由于未将图片上传至 CODING，故备份 hexo 分支时，不能同时备份图片文件。</p>
+<p>QShell 是基于七牛 API 服务的命令行工具，我们可以使用 qdownload 功能实现备份图片（静态资源）的功能。</p>
+<h3 id="配置账户"><a href="#配置账户" class="headerlink" title="配置账户"></a>配置账户</h3><p>我们需要创建<strong> account.json </strong>来保存账户的设置，account.json 一般保存在 $HOME_DIR/.qshell 目录下。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180114/160833271.png-newbietech.optimized" alt="QShell - .qshell"></p>
+<p>account.json 文件可使用如下命令创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qshell account ak sk</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180114/162111853.png-newbietech.optimized" alt="QShell - account"></p>
+<p>注：本图片内容截取自：<a href="https://github.com/qiniu/qshell/blob/master/docs/account.md" target="_blank" rel="noopener">https://github.com/qiniu/qshell/blob/master/docs/account.md</a></p>
+<p>也可以手动编辑，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;access_key&quot;:&quot;AK&quot;,&quot;secret_key&quot;:&quot;SK&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/20180114/162236990.png-newbietech.optimized" alt="QShell - account.json"></p>
+<p>设置完成后，运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qshell buckets</span><br></pre></td></tr></table></figure>
+<p>可以列出账号下的存储空间，则表明账户已经正确配置，可以对其进行操作。</p>
+<h3 id="下载配置"><a href="#下载配置" class="headerlink" title="下载配置"></a>下载配置</h3><p>我们需要创建一个配置文件，暂且命名为 backup-images.conf，内容如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"dest_dir"</span>   :   <span class="string">"/mnt/d/Blogs/newbietech/images"</span>,</span><br><span class="line">    <span class="attr">"bucket"</span>     :   <span class="string">"newbietech"</span>,</span><br><span class="line">    <span class="attr">"prefix"</span>     :   <span class="string">"newbietech/"</span>,</span><br><span class="line">    <span class="attr">"suffixes"</span>   :   <span class="string">".png,.jpg,.ico,.gif"</span>,</span><br><span class="line">    <span class="attr">"cdn_domain"</span> :   <span class="string">"cdn.huangzenghao.cn"</span>,</span><br><span class="line">    <span class="attr">"referer"</span>    :   <span class="string">"https://www.newbietech.cn"</span>,</span><br><span class="line">    <span class="attr">"log_file"</span>   :   <span class="string">"/mnt/d/Blogs/newbietech/download.log"</span>,</span><br><span class="line">    <span class="attr">"log_level"</span>  :   <span class="string">"info"</span>,</span><br><span class="line">    <span class="attr">"log_rotate"</span> :   <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"log_stdout"</span> :   <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qshell qdownload backup-images.conf</span><br></pre></td></tr></table></figure>
+<p>即可将图片备份至指定的目录（/mnt/d/Blogs/newbietech/images）。</p>
+<p>QShell qdownload 支持增量备份，备份完成后，可以查阅日志文件确定备份无异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">2018/01/14 17:09:32 [I] -------Download Result-------</span><br><span class="line">2018/01/14 17:09:32 [I]     Total:        12</span><br><span class="line">2018/01/14 17:09:32 [I]   Skipped:         0</span><br><span class="line">2018/01/14 17:09:32 [I]    Exists:         8</span><br><span class="line">2018/01/14 17:09:32 [I]   Success:         4</span><br><span class="line">2018/01/14 17:09:32 [I]    Update:         0</span><br><span class="line">2018/01/14 17:09:32 [I]   Failure:         0</span><br><span class="line">2018/01/14 17:09:32 [I]  Duration:      1.002062s</span><br><span class="line">2018/01/14 17:09:32 [I] -----------------------------</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1110,7 +1301,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1127,7 +1318,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -1172,7 +1367,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
