@@ -2,121 +2,128 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://newbietech.xyz/posts/2018-08-03-disable-windows-consumer-features.html</loc>
+    
+    <lastmod>2018-08-03T18:37:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html</loc>
     
-    <lastmod>2018-07-30T14:49:59.941Z</lastmod>
+    <lastmod>2018-07-30T14:50:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/google39d23617824076bf.html</loc>
     
-    <lastmod>2018-07-30T14:23:46.197Z</lastmod>
+    <lastmod>2018-07-30T14:23:48.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/posts/2018-07-30-initial-setup-of-a-centos-7-server.html</loc>
     
-    <lastmod>2018-07-29T18:22:18.564Z</lastmod>
+    <lastmod>2018-07-29T18:22:20.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/posts/2018-07-30-set-hostname.html</loc>
     
-    <lastmod>2018-07-29T18:21:40.280Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-07-19-using-hexo-on-windows-10.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-01-08-hello-world.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-01-14-hexo-deploy-and-backup-script.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <lastmod>2018-07-29T18:21:42.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html</loc>
     
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/posts/2018-07-22-hexo-config.html</loc>
     
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://newbietech.xyz/posts/2018-07-21-why-hexo.html</loc>
+    <loc>https://newbietech.xyz/posts/2018-01-14-hexo-deploy-and-backup-script.html</loc>
     
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-05-15-youhua-wr1200js.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
     
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/404.html</loc>
-    
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://newbietech.xyz/posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html</loc>
     
-    <lastmod>2018-07-22T06:55:47.599Z</lastmod>
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-01-08-hello-world.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-07-19-using-hexo-on-windows-10.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-07-21-why-hexo.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-01-10-windows-subsystem-for-linux.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-05-15-youhua-wr1200js.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/404.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://newbietech.xyz/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
+    
+    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
   </url>
   

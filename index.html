@@ -303,6 +303,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-08-03-disable-windows-consumer-features.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="newbietech">
+      <meta itemprop="description" content="关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="newbietech">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/2018-08-03-disable-windows-consumer-features.html" itemprop="url">
+                  禁用 Windows 10 自动安装游戏/应用程序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-03 23:02:56" itemprop="dateCreated datePublished" datetime="2018-08-03T23:02:56+08:00">2018-08-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/2018-08-03-disable-windows-consumer-features.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-08-03-disable-windows-consumer-features.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一直认为，强行安装“全家桶”只是国内部分厂商惯用的手段，没想到，微软也是如此。</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/180804/3kC3HcHBKf.png-newbietech.optimized" alt="Windows 10 - 自动安装游戏/应用程序"></p>
+<p>偶然间留意到开始屏幕中游戏的数量比较多，觉得碍眼了。于是，点点鼠标将它们都删除了。心里还在想微软还是挺有良心的，预装的游戏都可以轻松删除。</p>
+<p>谁知道，没多久，又都默默地装回来了，而且数量越来越多，这台工作机感觉要变游戏机了！</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/180804/g7m0j87Ihi.png-newbietech.optimized" alt="Windows 10 - 自动安装游戏/应用程序"></p>
+<p>于是，再删！但很快，又自动装回来了，这些游戏成了打不死的小强。</p>
+<p>忍无可忍之下，上百度一搜，解决方法就有了：</p>
+<ol>
+<li>在注册表中“HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\”下新建“CloudContent”项；</li>
+<li>在“CloudContent”项中新建“DisableWindowsConsumerFeatures的DWORD(32位)值”，赋值为“1”。</li>
+</ol>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/180804/ama9bFjb3a.png-newbietech.optimized" alt="Windows 10 - 禁止自动安装游戏/应用程序"></p>
+<p>如果嫌麻烦，下载以下注册表文件导入即可：<br><a href="https://files.huangzenghao.cn/Windows%20Registry/DisableWindowsConsumerFeatures.reg" target="_blank" rel="noopener">DisableWindowsConsumerFeatures.reg</a></p>
+<p>现在，开始屏幕终于清爽了！</p>
+<p><img src="https://cdn.huangzenghao.cn/newbietech/180804/3I5aAbFB4E.png-newbietech.optimized" alt="Windows 10 - 禁止自动安装游戏/应用程序"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-07-30-deploy-lnmp-stack-automatically-using-scripts.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2056,181 +2241,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://newbietech.xyz/posts/2018-01-14-hexo-deploy-and-backup-script.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="newbietech">
-      <meta itemprop="description" content="关注“适合个人、家庭及小微企业使用的产品/服务及技术”的独立博客">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="newbietech">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/2018-01-14-hexo-deploy-and-backup-script.html" itemprop="url">
-                  Hexo 部署与备份脚本
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-01-14 16:57:33" itemprop="dateCreated datePublished" datetime="2018-01-14T16:57:33+08:00">2018-01-14</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/2018-01-14-hexo-deploy-and-backup-script.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/2018-01-14-hexo-deploy-and-backup-script.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>写了个脚本，实现在更新博客的同时：</p>
-<ul>
-<li>同步源文件；</li>
-<li>备份图片。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#=================================================================#</span></span><br><span class="line"><span class="comment">#   更新博客                                                      #</span></span><br><span class="line"><span class="comment">#=================================================================#</span></span><br><span class="line"><span class="built_in">cd</span> </span><br><span class="line"><span class="built_in">cd</span> /mnt/d/Blogs/newbietech/hexo</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line"><span class="comment">#=================================================================#</span></span><br><span class="line"><span class="comment">#   同步源文件                                                    #</span></span><br><span class="line"><span class="comment">#=================================================================#</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Site updated."</span></span><br><span class="line">git push origin hexo</span><br><span class="line"><span class="comment">#=================================================================#</span></span><br><span class="line"><span class="comment">#   备份图片                                                      #</span></span><br><span class="line"><span class="comment">#=================================================================#</span></span><br><span class="line">qshell qdownload backup-images.conf</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2278,7 +2288,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
