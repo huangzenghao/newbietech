@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://newbietech.xyz/posts/2018-07-22-hexo-config.html</loc>
+    
+    <lastmod>2018-09-02T02:59:53.736Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://newbietech.xyz/posts/2018-08-03-disable-windows-consumer-features.html</loc>
     
     <lastmod>2018-08-03T18:37:12.000Z</lastmod>
@@ -37,14 +44,7 @@
   </url>
   
   <url>
-    <loc>https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html</loc>
-    
-    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newbietech.xyz/posts/2018-07-22-hexo-config.html</loc>
+    <loc>https://newbietech.xyz/posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html</loc>
     
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
@@ -58,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://newbietech.xyz/posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
+    <loc>https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
     
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://newbietech.xyz/posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html</loc>
+    <loc>https://newbietech.xyz/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
     
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://newbietech.xyz/posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
+    <loc>https://newbietech.xyz/posts/2018-01-28-totolink-a3004ns.html</loc>
     
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>https://newbietech.xyz/posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
+    <loc>https://newbietech.xyz/posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
     
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     

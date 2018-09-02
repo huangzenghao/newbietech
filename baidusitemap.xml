@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>https://newbietech.xyz//posts/2018-07-22-hexo-config.html</loc>
+    <lastmod>2018-09-02T02:59:53.736Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 配置</title>
+        <pubTime>2018-07-21T16:09:13.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
+          
+             
+              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://newbietech.xyz//posts/2018-08-03-disable-windows-consumer-features.html</loc>
     <lastmod>2018-08-03T18:37:12.000Z</lastmod>
     <data>
@@ -99,43 +124,18 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-28-totolink-a3004ns.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html</loc>
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     <data>
         <display>
-        <title>TOTOLINK A3004NS</title>
-        <pubTime>2018-01-27T17:16:44.000Z</pubTime>
-        
-        <tag>路由器</tag>
-         
-        <tag>Padavan</tag>
-         
-        <tag>网络科技</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="https://newbietech.xyz/categories/Notes/"/>
-          
-             
-              <breadCrumb title="IT" url="https://newbietech.xyz/categories/Notes/IT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://newbietech.xyz//posts/2018-07-22-hexo-config.html</loc>
-    <lastmod>2018-07-22T06:55:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 配置</title>
-        <pubTime>2018-07-21T16:09:13.000Z</pubTime>
+        <title>为 Hexo 博客创建网站地图（Sitemap）</title>
+        <pubTime>2018-07-21T15:29:37.000Z</pubTime>
         
         <tag>Blog</tag>
          
         <tag>Hexo</tag>
+         
+        <tag>Sitemap</tag>
          
          
            
@@ -174,16 +174,20 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     <data>
         <display>
-        <title>使用符号链接令 OneDrive 可以同步电脑上的任意文件夹</title>
-        <pubTime>2018-01-11T15:20:11.000Z</pubTime>
+        <title>使用 Hexo 在 CODING 和 GitHub 上搭建博客</title>
+        <pubTime>2018-01-10T15:39:49.000Z</pubTime>
         
-        <tag>Windows</tag>
+        <tag>Blog</tag>
          
-        <tag>OneDrive</tag>
+        <tag>CODING</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>Node.js</tag>
          
          
            
@@ -199,18 +203,14 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-07-21-adding-sitemaps-to-your-hexo-blog.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     <data>
         <display>
-        <title>为 Hexo 博客创建网站地图（Sitemap）</title>
-        <pubTime>2018-07-21T15:29:37.000Z</pubTime>
+        <title>使用 QShell 备份七牛上的图片（静态资源）</title>
+        <pubTime>2018-01-14T07:58:30.000Z</pubTime>
         
-        <tag>Blog</tag>
-         
-        <tag>Hexo</tag>
-         
-        <tag>Sitemap</tag>
+        <tag>七牛</tag>
          
          
            
@@ -252,20 +252,18 @@
 
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-10-creating-a-blog-site-with-hexo-on-coding-and-github.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-28-totolink-a3004ns.html</loc>
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     <data>
         <display>
-        <title>使用 Hexo 在 CODING 和 GitHub 上搭建博客</title>
-        <pubTime>2018-01-10T15:39:49.000Z</pubTime>
+        <title>TOTOLINK A3004NS</title>
+        <pubTime>2018-01-27T17:16:44.000Z</pubTime>
         
-        <tag>Blog</tag>
+        <tag>路由器</tag>
          
-        <tag>CODING</tag>
+        <tag>Padavan</tag>
          
-        <tag>GitHub</tag>
-         
-        <tag>Node.js</tag>
+        <tag>网络科技</tag>
          
          
            
@@ -390,14 +388,16 @@
     
     
   <url>
-    <loc>https://newbietech.xyz//posts/2018-01-14-backup-images-on-qiniu-using-qshell.html</loc>
+    <loc>https://newbietech.xyz//posts/2018-01-11-make-onedrive-sync-any-folder-on-your-pc-using-symbolic-links.html</loc>
     <lastmod>2018-07-22T06:55:48.000Z</lastmod>
     <data>
         <display>
-        <title>使用 QShell 备份七牛上的图片（静态资源）</title>
-        <pubTime>2018-01-14T07:58:30.000Z</pubTime>
+        <title>使用符号链接令 OneDrive 可以同步电脑上的任意文件夹</title>
+        <pubTime>2018-01-11T15:20:11.000Z</pubTime>
         
-        <tag>七牛</tag>
+        <tag>Windows</tag>
+         
+        <tag>OneDrive</tag>
          
          
            
